@@ -1,6 +1,8 @@
+---
 - hosts: all
   remote_user: root
   tasks:
+  - name: apt-get update 
     apt: update_cache=yes
   - name: Update dist-upgrade
     apt: upgrade=dist
@@ -20,3 +22,5 @@
     copy: src=~/.oh-my-zsh/templates/zshrc.zsh-template dest=~/.zshrc
   - name: Set zsh as default shell
     user: name=root shell=/bin/zsh
+  roles:
+    - motd
