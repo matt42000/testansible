@@ -1,0 +1,11 @@
+---
+  - name: install packages
+    apt: name={{item}} state=latest
+    with_items:
+    - htop
+    - zsh
+    - git
+    - nload
+    - glances
+    - tree
+    - tcpdump
