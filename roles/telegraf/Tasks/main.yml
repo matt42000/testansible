@@ -1,0 +1,9 @@
+---
+- name: motd
+  template:
+    src: motd.j2
+    dest: /etc/motd
+- name: motd enable on ssh login
+  lineinfile: dest=/etc/ssh/sshd_config regexp='#Banner /etc/issue.net' line="Banner /etc/motd"
+- name: Restart ssh
+  service: name=ssh state=restarted
