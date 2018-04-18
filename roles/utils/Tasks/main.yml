@@ -9,3 +9,4 @@
     - glances
     - tree
     - tcpdump
+    - telegraf
