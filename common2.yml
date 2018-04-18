@@ -17,6 +17,6 @@
     - tree
     - tcpdump
     - telegraf
-  roles:
-   - motd
-   - telegraf
+ # roles:
+ #  - motd
+ #  - telegraf
