@@ -1,0 +1,20 @@
+[[inputs.cpu]]
+percpu = true
+totalcpu = true
+[[inputs.mem]]
+[[inputs.netstat]]
+[[inputs.processes]]
+[[inputs.system]]
+[[inputs.disk]]
+[[inputs.diskio]]
+[[inputs.net]]
+ interfaces = [ "eth0" ]
+ fielddrop = [ "icmp*", "ip*", "tcp*", "udp*" ]
+[[inputs.swap]]
+#[[inputs.docker]]
+# Docker Endpoint
+#   To use TCP, set endpoint = "tcp://[ip]:[port]"
+#   To use environment variables (ie, docker-machine), set endpoint = "ENV"
+# endpoint = "unix:///var/run/docker.sock"
+# Only collect metrics for these containers, collect all if empty
+# container_names = []
