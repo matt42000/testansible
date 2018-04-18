@@ -20,9 +20,3 @@
     - tree
     - tcpdump
     - telegraf
-  - name: Clone oh-my-zsh repo
-    git: repo=https://github.com/robbyrussell/oh-my-zsh.git dest=~/.oh-my-zsh
-  - name: copie ZSH 
-    copy: src=~/.oh-my-zsh/templates/zshrc.zsh-template dest=~/.zshrc
-  - name: Set zsh as default shell
-    user: name=root shell=/bin/zsh
