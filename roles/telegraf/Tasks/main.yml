@@ -1,9 +1,10 @@
 ---
-- name: motd
+- name: telegraf
   template:
-    src: motd.j2
-    dest: /etc/motd
-- name: motd enable on ssh login
-  lineinfile: dest=/etc/ssh/sshd_config regexp='#Banner /etc/issue.net' line="Banner /etc/motd"
-- name: Restart ssh
-  service: name=ssh state=restarted
+    src: inputs_system.conf.j2
+    dest: /etc/telegraf/telegraf.d/
+  template:
+    src: outputs.conf.j2
+    dest: /etc/telegraf/telegraf.d/
+- name: Restart telegraf
+  service: name=telegraf state=restarted
