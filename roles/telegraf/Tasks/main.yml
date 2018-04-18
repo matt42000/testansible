@@ -1,8 +1,9 @@
 ---
-- name: telegraf
+- name: telegraf inputs
   template:
     src: inputs_system.conf.j2
     dest: /etc/telegraf/telegraf.d/
+- name: telegraf outputs	
   template:
     src: outputs.conf.j2
     dest: /etc/telegraf/telegraf.d/
